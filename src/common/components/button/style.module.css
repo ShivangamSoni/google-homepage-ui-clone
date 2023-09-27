@@ -1,0 +1,23 @@
+.button {
+    cursor: pointer;
+
+    appearance: none;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    color: var(--clr-text-btn);
+    background-color: var(--clr-bg-btn);
+
+    padding: 0.75em 1.25em;
+}
+
+.button:hover {
+    box-shadow: var(--shadow-xs);
+    border-color: var(--clr-border-hover);
+}
+
+.button:focus,
+.button:active {
+    border-color: var(--clr-border-focus);
+}
