@@ -1,4 +1,5 @@
 .container {
+    cursor: pointer;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -17,7 +18,5 @@
     background: transparent;
 
     flex: 100%;
-
     font-size: var(--fz-100);
-    margin-bottom: -0.5em;
 }

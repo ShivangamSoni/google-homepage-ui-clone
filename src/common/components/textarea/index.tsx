@@ -1,23 +1,67 @@
-import { type ComponentPropsWithoutRef, type ReactNode } from "react";
+import {
+    type ComponentPropsWithoutRef,
+    type ReactNode,
+    useRef,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+} from "react";
 
 import classes from "./style.module.css";
 
 interface TextareaProps extends ComponentPropsWithoutRef<"textarea"> {
     startIcon?: ReactNode;
+    onClear?: () => void;
 }
 
-export default function Textarea({ startIcon, ...props }: TextareaProps) {
-    // TODO: Textarea Auto Height
-    // TODO: Textarea Clear
+function updateHeight(textArea?: HTMLTextAreaElement) {
+    if (textArea == null) return;
+
+    textArea.style.height = "0";
+    textArea.style.height = `${textArea.scrollHeight}px`;
+}
+
+export default function Textarea({
+    startIcon,
+    onClear,
+    value,
+    ...props
+}: TextareaProps) {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const textAreaRef = useRef<HTMLTextAreaElement>();
+    const inputRef = useCallback((textArea: HTMLTextAreaElement) => {
+        updateHeight(textArea);
+        textAreaRef.current = textArea;
+    }, []);
+
+    useEffect(() => {
+        textAreaRef.current?.focus();
+    }, []);
+
+    useLayoutEffect(() => {
+        updateHeight(textAreaRef.current);
+    }, [value]);
+
     return (
-        <div className={classes.container}>
+        <div
+            className={classes.container}
+            ref={containerRef}
+            onClick={() => textAreaRef.current?.focus()}
+        >
             {!!startIcon && startIcon}
             <textarea
                 {...props}
-                style={{ height: "30px" }}
                 className={classes.textarea}
+                ref={inputRef}
+                value={value}
             />
-            <button type="button">&times;</button>
+            {onClear &&
+                textAreaRef.current &&
+                textAreaRef.current?.value.length > 0 && (
+                    <button type="button" onClick={onClear}>
+                        &times;
+                    </button>
+                )}
         </div>
     );
 }
