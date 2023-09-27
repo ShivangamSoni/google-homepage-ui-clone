@@ -1,9 +1,14 @@
 import Header from "../../features/home/header";
+import Search from "../../features/home/search";
+
+import classes from "./style.module.css";
 
 export default function Home() {
     return (
-        <div>
+        <div className={classes.home}>
             <Header />
+            <Search />
+            <footer>Footer</footer>
         </div>
     );
 }

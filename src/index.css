@@ -29,3 +29,10 @@ ol {
     list-style-position: inside;
     list-style: none;
 }
+
+/* Common */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin-inline: auto;
+}
