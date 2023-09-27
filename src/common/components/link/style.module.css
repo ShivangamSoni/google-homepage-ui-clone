@@ -1,0 +1,15 @@
+.link {
+    display: inline-block;
+    padding: 0.25em;
+    font-size: var(--fz-50);
+    text-decoration: none;
+    color: var(--clr-text-primary);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link:focus-visible {
+    outline-offset: 2px;
+}

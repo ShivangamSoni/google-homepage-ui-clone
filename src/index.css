@@ -16,8 +16,16 @@
     --fz-200: 1.25rem;
     --fz-200: 1.5rem;
     --fz-300: 3rem;
+
+    --clr-text-primary: rgba(0, 0, 0, 0.87);
 }
 
 html {
     font-family: var(--fontFamily);
+}
+
+ul,
+ol {
+    list-style-position: inside;
+    list-style: none;
 }
