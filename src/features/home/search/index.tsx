@@ -1,3 +1,4 @@
+import SearchBar from "../SearchBar";
 import classes from "./style.module.css";
 
 export default function Search() {
@@ -12,6 +13,8 @@ export default function Search() {
                     />
                 </picture>
             </div>
+
+            <SearchBar />
         </main>
     );
 }
