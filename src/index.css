@@ -18,6 +18,14 @@
     --fz-300: 3rem;
 
     --clr-text-primary: rgba(0, 0, 0, 0.87);
+
+    --clr-text-btn: #3c4043;
+    --clr-bg-btn: #f8f9fa;
+
+    --clr-border-hover: #dadce0;
+    --clr-border-focus: #4285f4;
+
+    --shadow-xs: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 html {
