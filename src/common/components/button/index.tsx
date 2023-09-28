@@ -2,8 +2,15 @@ import { type ComponentPropsWithoutRef } from "react";
 
 import classes from "./style.module.css";
 
-type ButtonProps = ComponentPropsWithoutRef<"button">;
+interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+    variant?: "standard" | "ghost";
+}
 
-export default function Button(props: ButtonProps) {
-    return <button {...props} className={classes.button} />;
+export default function Button({ variant, className, ...props }: ButtonProps) {
+    return (
+        <button
+            {...props}
+            className={`${classes.button} ${variant} ${className}`}
+        />
+    );
 }

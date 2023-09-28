@@ -21,3 +21,17 @@
 .button:active {
     border-color: var(--clr-border-focus);
 }
+
+.button:global(.ghost) {
+    background-color: transparent;
+}
+
+.button:global(.ghost):hover {
+    box-shadow: none;
+    border-color: transparent;
+    background-color: var(--clr-text-link);
+}
+
+.button:global(.ghost):active {
+    border-color: transparent;
+}

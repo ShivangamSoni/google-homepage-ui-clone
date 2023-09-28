@@ -28,6 +28,8 @@
     --clr-bg-main: #fff;
     --clr-bg-footer: #f2f2f2;
     --clr-bg-btn: #f8f9fa;
+    --clr-bg-appContainer: #e9eef6;
+    --clr-bg-apps: #f8fafd;
 
     --clr-border-hover: #dadce0;
     --clr-border-focus: #4285f4;
@@ -46,6 +48,8 @@
     --clr-bg-main: #202124;
     --clr-bg-footer: #171717;
     --clr-bg-btn: #303134;
+    --clr-bg-appContainer: #282a2c;
+    --clr-bg-apps: #1b1b1b;
 
     --clr-border-hover: #e8eaed;
 
