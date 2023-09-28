@@ -15,9 +15,6 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-
-            {/* TODO: Apps */}
-            {/* TODO: Profile */}
         </header>
     );
 }

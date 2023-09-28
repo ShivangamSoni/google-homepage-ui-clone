@@ -1,9 +1,12 @@
 import Link from "../../../common/components/link";
+import { useTheme } from "../../../context/SiteTheme";
 import { FOOTER_LINKS, FOOTER_TERMS } from "../../../data/nav";
 
 import classes from "./style.module.css";
 
 export default function Footer() {
+    const { mode, toggleMode } = useTheme();
+
     return (
         <footer className={classes.footer}>
             <div className={classes.location}>
@@ -30,8 +33,12 @@ export default function Footer() {
                         </li>
                     ))}
 
-                    <Link className={classes.link} onClick={() => {}}>
-                        Menu
+                    <Link
+                        className={classes.link}
+                        onClick={toggleMode}
+                        href="#"
+                    >
+                        Dark theme: {mode === "dark" ? "on" : "off"}
                     </Link>
                 </ul>
             </nav>

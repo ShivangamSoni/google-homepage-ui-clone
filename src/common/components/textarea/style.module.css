@@ -16,6 +16,11 @@
     box-shadow: var(--shadow-sm);
 }
 
+:global(.dark) .container:focus-within,
+:global(.dark) .container:hover {
+    background-color: var(--clr-bg-btn);
+}
+
 .textarea {
     appearance: none;
     border: none;

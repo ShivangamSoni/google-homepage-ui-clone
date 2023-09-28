@@ -1,6 +1,6 @@
-import Footer from "../../features/home/footer";
 import Header from "../../features/home/header";
 import Search from "../../features/home/search";
+import Footer from "../../features/home/footer";
 
 import classes from "./style.module.css";
 
