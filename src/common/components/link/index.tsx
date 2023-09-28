@@ -4,6 +4,6 @@ import classes from "./style.module.css";
 
 type LinkProps = ComponentPropsWithoutRef<"a">;
 
-export default function Link(props: LinkProps) {
-    return <a {...props} className={classes.link} />;
+export default function Link({ className, ...props }: LinkProps) {
+    return <a {...props} className={`${classes.link} ${className}`} />;
 }
