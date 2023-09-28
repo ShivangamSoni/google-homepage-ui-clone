@@ -1,17 +1,19 @@
 import {
-    type ComponentPropsWithoutRef,
+    type ComponentPropsWithRef,
     type ReactNode,
     useRef,
     useCallback,
     useEffect,
     useLayoutEffect,
+    useImperativeHandle,
+    forwardRef,
 } from "react";
 
 import { X as CloseIcon } from "lucide-react";
 
 import classes from "./style.module.css";
 
-interface TextareaProps extends ComponentPropsWithoutRef<"textarea"> {
+interface TextareaProps extends ComponentPropsWithRef<"textarea"> {
     startIcon?: ReactNode;
     onClear?: () => void;
 }
@@ -23,12 +25,11 @@ function updateHeight(textArea?: HTMLTextAreaElement) {
     textArea.style.height = `${textArea.scrollHeight}px`;
 }
 
-export default function Textarea({
-    startIcon,
-    onClear,
-    value,
-    ...props
-}: TextareaProps) {
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function (
+    { startIcon, onClear, value, ...props },
+    ref
+) {
+    console.log(value);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const textAreaRef = useRef<HTMLTextAreaElement>();
     const inputRef = useCallback((textArea: HTMLTextAreaElement) => {
@@ -43,6 +44,8 @@ export default function Textarea({
     useLayoutEffect(() => {
         updateHeight(textAreaRef.current);
     }, [value]);
+
+    useImperativeHandle(ref, () => textAreaRef.current!);
 
     return (
         <div
@@ -69,4 +72,6 @@ export default function Textarea({
             )}
         </div>
     );
-}
+});
+
+export default Textarea;
