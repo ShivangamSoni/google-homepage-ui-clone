@@ -1,0 +1,28 @@
+.footer {
+    background-color: var(--clr-bg-footer);
+}
+
+.location {
+    color: var(--clr-text-link);
+    border-bottom: 1px solid var(--clr-border-hover);
+    padding: 0.75rem 1.25rem;
+}
+
+.nav {
+    padding: 0.1rem 1.25em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.25rem;
+}
+
+.link {
+    color: var(--clr-text-link);
+    padding-block: 1em;
+}

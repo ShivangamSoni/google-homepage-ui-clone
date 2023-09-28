@@ -1,3 +1,4 @@
+import Footer from "../../features/home/footer";
 import Header from "../../features/home/header";
 import Search from "../../features/home/search";
 
@@ -8,7 +9,7 @@ export default function Home() {
         <div className={classes.home}>
             <Header />
             <Search />
-            <footer>Footer</footer>
+            <Footer />
         </div>
     );
 }

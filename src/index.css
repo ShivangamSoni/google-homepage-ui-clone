@@ -18,11 +18,15 @@
     --fz-300: 3rem;
 
     --clr-text-primary: rgba(0, 0, 0, 0.87);
-    --clr-link: #1a0dab;
     --clr-text-btn: #3c4043;
+    --clr-text-link: #70757a;
+
+    --clr-link: #1a0dab;
+
+    --clr-bg-footer: #f2f2f2;
     --clr-bg-btn: #f8f9fa;
+
     --clr-border-hover: #dadce0;
-    --clr-border-hover: hsl(220, 9%, 70%);
     --clr-border-focus: #4285f4;
 
     --shadow-xs: 0 1px 1px rgba(0, 0, 0, 0.1);
