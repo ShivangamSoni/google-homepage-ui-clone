@@ -5,10 +5,7 @@ import Home from "./pages/home/page";
 export default function App() {
     const { mode } = useTheme();
 
-    console.log(mode);
-
     useLayoutEffect(() => {
-        console.log("App Theme", mode, document.querySelector("html"));
         const html = document.querySelector("html");
         if (html) {
             if (mode === "dark") {

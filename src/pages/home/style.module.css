@@ -3,4 +3,5 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     background-color: var(--clr-bg-main);
+    gap: 5rem;
 }
