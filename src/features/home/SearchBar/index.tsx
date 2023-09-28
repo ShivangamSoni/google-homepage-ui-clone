@@ -18,14 +18,17 @@ export default function SearchBar() {
                 onClear={() => setValue("")}
                 startIcon={
                     <span>
-                        <SearchIcon color="hsl(220, 9%, 70%)" size={"1rem"} />
+                        <SearchIcon
+                            color={"var(--clr-border-hover)"}
+                            size={"1rem"}
+                        />
                     </span>
                 }
             />
 
             <div className={classes.actions}>
-                <Button>Google Search</Button>
-                <Button>I'm Feeling Lucky</Button>
+                <Button type="submit">Google Search</Button>
+                <Button type="button">I'm Feeling Lucky</Button>
             </div>
         </form>
     );

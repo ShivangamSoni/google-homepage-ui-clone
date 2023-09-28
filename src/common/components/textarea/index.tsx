@@ -7,6 +7,8 @@ import {
     useLayoutEffect,
 } from "react";
 
+import { X as CloseIcon } from "lucide-react";
+
 import classes from "./style.module.css";
 
 interface TextareaProps extends ComponentPropsWithoutRef<"textarea"> {
@@ -55,13 +57,16 @@ export default function Textarea({
                 ref={inputRef}
                 value={value}
             />
-            {onClear &&
-                textAreaRef.current &&
-                textAreaRef.current?.value.length > 0 && (
-                    <button type="button" onClick={onClear}>
-                        &times;
-                    </button>
-                )}
+            {onClear && value && (value as string).length > 0 && (
+                <button
+                    className={classes.clear}
+                    type="button"
+                    onClick={onClear}
+                    title="Clear"
+                >
+                    <CloseIcon size={"5em"} />
+                </button>
+            )}
         </div>
     );
 }
